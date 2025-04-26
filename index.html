@@ -408,47 +408,72 @@
       });
     });
 
-    // --- Ribbon Mouse Trail ---
-    const ribbon = document.createElement('div');
-    ribbon.className = 'mouse-ribbon';
-    document.body.appendChild(ribbon);
+const ribbonCanvas = document.getElementById('mouse-ribbon');
+const ctx = ribbonCanvas.getContext('2d');
 
-    let mouseX = 0, mouseY = 0;
-    let posX = 0, posY = 0;
+let ribbonPoints = [];
+let lastTime = 0;
 
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
+function resizeCanvas() {
+  ribbonCanvas.width = window.innerWidth;
+  ribbonCanvas.height = window.innerHeight;
+}
 
-    function animateRibbon() {
-      const dx = mouseX - posX;
-      const dy = mouseY - posY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
-      let thickness = Math.min(30, Math.max(4, distance * 0.4));
+document.addEventListener('mousemove', (e) => {
+  ribbonPoints.push({ x: e.clientX, y: e.clientY, age: 0 });
+});
 
-      ribbon.style.width = `${distance}px`;
-      ribbon.style.height = `${thickness}px`;
-      ribbon.style.transform = `translate(${posX}px, ${posY}px) rotate(${angle}deg)`;
+function animateRibbon(time) {
+  const deltaTime = time - lastTime;
+  lastTime = time;
+  
+  ctx.clearRect(0, 0, ribbonCanvas.width, ribbonCanvas.height);
 
-      posX += dx * 0.2;
-      posY += dy * 0.2;
+  ribbonPoints.forEach(p => p.age += deltaTime);
+  ribbonPoints = ribbonPoints.filter(p => p.age < 1000);
 
-      requestAnimationFrame(animateRibbon);
+  if (ribbonPoints.length > 1) {
+    ctx.beginPath();
+    ctx.moveTo(ribbonPoints[0].x, ribbonPoints[0].y);
+
+    for (let i = 1; i < ribbonPoints.length; i++) {
+      const p = ribbonPoints[i];
+      ctx.lineTo(p.x, p.y);
     }
-    animateRibbon();
 
-    function updateRibbonVisibility() {
-      if (document.body.classList.contains('light-theme')) {
-        ribbon.style.display = 'none';
-      } else {
-        ribbon.style.display = 'block';
-      }
-    }
-    updateRibbonVisibility();
-  });
+    
+    const gradient = ctx.createLinearGradient(
+      ribbonPoints[0].x, ribbonPoints[0].y,
+      ribbonPoints[ribbonPoints.length-1].x, ribbonPoints[ribbonPoints.length-1].y
+    );
+    gradient.addColorStop(0, '#00ffe0');
+    gradient.addColorStop(0.5, '#ff00d4');
+    gradient.addColorStop(1, '#ffcc00');
+
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = 4; 
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.stroke();
+  }
+
+  requestAnimationFrame(animateRibbon);
+}
+
+requestAnimationFrame(animateRibbon);
+
+function updateRibbonVisibility() {
+  const container = document.querySelector('.mouse-ribbon-container');
+  if (document.body.classList.contains('light-theme')) {
+    container.style.display = 'none';
+  } else {
+    container.style.display = 'block';
+  }
+}
+updateRibbonVisibility();
 </script>
 </body>
 </html>
