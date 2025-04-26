@@ -408,72 +408,81 @@
       });
     });
 
-const ribbonCanvas = document.getElementById('mouse-ribbon');
-const ctx = ribbonCanvas.getContext('2d');
+    // --- God-Level Organic Ribbon ---
+    const ribbonContainer = document.createElement('div');
+    ribbonContainer.className = 'mouse-ribbon-container';
+    ribbonContainer.innerHTML = '<canvas id="mouse-ribbon"></canvas>';
+    document.body.appendChild(ribbonContainer);
 
-let ribbonPoints = [];
-let lastTime = 0;
+    const canvas = document.getElementById('mouse-ribbon');
+    const ctx = canvas.getContext('2d');
+    let points = [];
+    let hue = 0;
 
-function resizeCanvas() {
-  ribbonCanvas.width = window.innerWidth;
-  ribbonCanvas.height = window.innerHeight;
-}
-
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-document.addEventListener('mousemove', (e) => {
-  ribbonPoints.push({ x: e.clientX, y: e.clientY, age: 0 });
-});
-
-function animateRibbon(time) {
-  const deltaTime = time - lastTime;
-  lastTime = time;
-  
-  ctx.clearRect(0, 0, ribbonCanvas.width, ribbonCanvas.height);
-
-  ribbonPoints.forEach(p => p.age += deltaTime);
-  ribbonPoints = ribbonPoints.filter(p => p.age < 1000);
-
-  if (ribbonPoints.length > 1) {
-    ctx.beginPath();
-    ctx.moveTo(ribbonPoints[0].x, ribbonPoints[0].y);
-
-    for (let i = 1; i < ribbonPoints.length; i++) {
-      const p = ribbonPoints[i];
-      ctx.lineTo(p.x, p.y);
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-    
-    const gradient = ctx.createLinearGradient(
-      ribbonPoints[0].x, ribbonPoints[0].y,
-      ribbonPoints[ribbonPoints.length-1].x, ribbonPoints[ribbonPoints.length-1].y
-    );
-    gradient.addColorStop(0, '#00ffe0');
-    gradient.addColorStop(0.5, '#ff00d4');
-    gradient.addColorStop(1, '#ffcc00');
+    document.addEventListener('mousemove', (e) => {
+      for (let i = 0; i < 5; i++) {
+        points.push({
+          x: e.clientX,
+          y: e.clientY,
+          vx: (Math.random() - 0.5) * 2,
+          vy: (Math.random() - 0.5) * 2,
+          life: 0
+        });
+      }
+    });
 
-    ctx.strokeStyle = gradient;
-    ctx.lineWidth = 4; 
+   function animateRibbon() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    hue += 0.5;
+    ctx.strokeStyle = `hsl(${hue}, 100%, 70%)`;
+    ctx.lineWidth = 4;
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
+    ctx.shadowColor = `hsl(${hue}, 100%, 70%)`;
+    ctx.shadowBlur = 20; 
+
+    ctx.beginPath();
+    for (let i = 0; i < points.length; i++) {
+      const p = points[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.98;
+      p.vy *= 0.98;
+      p.life += 1;
+
+      if (i === 0) {
+        ctx.moveTo(p.x, p.y);
+      } else {
+        ctx.lineTo(p.x, p.y);
+      }
+    }
     ctx.stroke();
+
+    points = points.filter(p => p.life < 100);
+    requestAnimationFrame(animateRibbon);
   }
 
-  requestAnimationFrame(animateRibbon);
-}
+    animateRibbon();
 
-requestAnimationFrame(animateRibbon);
-
-function updateRibbonVisibility() {
-  const container = document.querySelector('.mouse-ribbon-container');
-  if (document.body.classList.contains('light-theme')) {
-    container.style.display = 'none';
-  } else {
-    container.style.display = 'block';
-  }
-}
-updateRibbonVisibility();
+    function updateRibbonVisibility() {
+      const container = document.querySelector('.mouse-ribbon-container');
+      if (document.body.classList.contains('light-theme')) {
+        container.style.display = 'none';
+      } else {
+        container.style.display = 'block';
+      }
+    }
+    updateRibbonVisibility();
+  });
 </script>
+
 </body>
 </html>
