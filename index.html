@@ -408,80 +408,80 @@
       });
     });
 
-    // --- God-Level Organic Ribbon ---
-    const ribbonContainer = document.createElement('div');
-    ribbonContainer.className = 'mouse-ribbon-container';
-    ribbonContainer.innerHTML = '<canvas id="mouse-ribbon"></canvas>';
-    document.body.appendChild(ribbonContainer);
+const ribbonContainer = document.createElement('div');
+ribbonContainer.className = 'mouse-ribbon-container';
+ribbonContainer.innerHTML = '<canvas id="mouse-ribbon"></canvas>';
+document.body.appendChild(ribbonContainer);
 
-    const canvas = document.getElementById('mouse-ribbon');
-    const ctx = canvas.getContext('2d');
-    let points = [];
-    let hue = 0;
+const canvas = document.getElementById('mouse-ribbon');
+const ctx = canvas.getContext('2d');
+let points = [];
+let hue = 0;
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
-    document.addEventListener('mousemove', (e) => {
-      for (let i = 0; i < 5; i++) {
-        points.push({
-          x: e.clientX,
-          y: e.clientY,
-          vx: (Math.random() - 0.5) * 2,
-          vy: (Math.random() - 0.5) * 2,
-          life: 0
-        });
-      }
+document.addEventListener('mousemove', (e) => {
+  for (let i = 0; i < 2; i++) {
+    points.push({
+      x: e.clientX,
+      y: e.clientY,
+      vx: (Math.random() - 0.5) * 1.2,
+      vy: (Math.random() - 0.5) * 1.2,
+      life: 0
     });
+  }
+});
 
-   function animateRibbon() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+function animateRibbon() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    hue += 0.5;
-    ctx.strokeStyle = `hsl(${hue}, 100%, 70%)`;
-    ctx.lineWidth = 4;
-    ctx.lineJoin = 'round';
-    ctx.lineCap = 'round';
-    ctx.shadowColor = `hsl(${hue}, 100%, 70%)`;
-    ctx.shadowBlur = 20; 
+  hue += 2; 
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+  ctx.shadowBlur = 10; 
 
+  if (points.length > 0) {
     ctx.beginPath();
-    for (let i = 0; i < points.length; i++) {
+    ctx.moveTo(points[0].x, points[0].y);
+
+    for (let i = 1; i < points.length; i++) {
       const p = points[i];
       p.x += p.vx;
       p.y += p.vy;
-      p.vx *= 0.98;
-      p.vy *= 0.98;
+      p.vx *= 0.9; 
+      p.vy *= 0.9;
       p.life += 1;
 
-      if (i === 0) {
-        ctx.moveTo(p.x, p.y);
-      } else {
-        ctx.lineTo(p.x, p.y);
-      }
+      ctx.lineTo(p.x, p.y);
     }
-    ctx.stroke();
 
-    points = points.filter(p => p.life < 100);
-    requestAnimationFrame(animateRibbon);
+    ctx.strokeStyle = `hsla(${hue}, 100%, 70%, 0.6)`; 
+    ctx.lineWidth = 1.5; 
+    ctx.shadowColor = `hsl(${hue}, 100%, 70%)`;
+    ctx.stroke();
   }
 
-    animateRibbon();
+  points = points.filter(p => p.life < 36); 
+  requestAnimationFrame(animateRibbon);
+}
 
-    function updateRibbonVisibility() {
-      const container = document.querySelector('.mouse-ribbon-container');
-      if (document.body.classList.contains('light-theme')) {
-        container.style.display = 'none';
-      } else {
-        container.style.display = 'block';
-      }
-    }
-    updateRibbonVisibility();
-  });
+animateRibbon();
+
+function updateRibbonVisibility() {
+  const container = document.querySelector('.mouse-ribbon-container');
+  if (document.body.classList.contains('light-theme')) {
+    container.style.display = 'none';
+  } else {
+    container.style.display = 'block';
+  }
+}
+updateRibbonVisibility();
+
 </script>
 
 </body>
