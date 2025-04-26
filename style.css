@@ -276,34 +276,24 @@ header.light .nav-item {
 }
 
 /* ─── MOUSE RIBBION ─────────────────────────────────────────────── */
-.mouse-ribbon-container {
+.mouse-ribbon {
   position: fixed;
   top: 0;
   left: 0;
+  height: 4px; 
+  background: linear-gradient(90deg, #00ffe0, #ff00d4, #ffcc00);
+  background-size: 300% 100%;
+  border-radius: 50px;
   pointer-events: none;
   z-index: 9999;
-}
-
-.ribbon-dot {
-  position: absolute;
-  width: 3px;
-  height: 20px;
-  border-radius: 2px;
-  background: linear-gradient(135deg, #00ffe0, #ff00d4, #ffcc00);
   opacity: 0.9;
-  transform: translate(-50%, -50%) rotate(45deg);
-  animation: fadeOut 0.8s ease-out forwards;
+  transform-origin: left center;
+  animation: flowGradient 3s linear infinite;
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scaleY(1) translate(-50%, -50%) rotate(45deg);
-  }
-  100% {
-    opacity: 0;
-    transform: scaleY(2.5) translate(-50%, -50%) rotate(45deg);
-  }
+@keyframes flowGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
