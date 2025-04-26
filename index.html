@@ -29,7 +29,9 @@
     </ul>
     <button id="theme-toggle"><i class="fas fa-moon"></i></button>
   </header>
-  <div class="mouse-ribbon-container"></div>
+  <div class="mouse-ribbon-container">
+    <canvas id="mouse-ribbion"></canvas>
+  </div>
   <main>
 <section id="hero">
   <div class="hero-container">
@@ -382,21 +384,6 @@
       updateRibbonVisibility();
     });
 
-    const ribbonContainer = document.querySelector('.mouse-ribbon-container');
-    document.addEventListener('mousemove', (e) => {
-      const dot = document.createElement('div');
-      dot.className = 'ribbon-dot';
-      dot.style.left = `${e.clientX}px`;
-      dot.style.top = `${e.clientY}px`;
-      ribbonContainer.appendChild(dot);
-      setTimeout(() => ribbonContainer.removeChild(dot), 800);
-    });
-
-    function updateRibbonVisibility() {
-      ribbonContainer.style.display = document.body.classList.contains('light-theme') ? 'none' : 'block';
-    }
-    updateRibbonVisibility();
-
     ScrollReveal().reveal('.hero-title',    { delay: 200, distance: '50px', origin: 'bottom' });
     ScrollReveal().reveal('.hero-subtitle', { delay: 400, distance: '30px', origin: 'bottom' });
     ScrollReveal().reveal('.hero-description', { delay: 600, distance: '20px', origin: 'bottom' });
@@ -420,6 +407,47 @@
         if (a.getAttribute('href') === `#${cur}`) a.classList.add('active');
       });
     });
+
+    // --- Ribbon Mouse Trail ---
+    const ribbon = document.createElement('div');
+    ribbon.className = 'mouse-ribbon';
+    document.body.appendChild(ribbon);
+
+    let mouseX = 0, mouseY = 0;
+    let posX = 0, posY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animateRibbon() {
+      const dx = mouseX - posX;
+      const dy = mouseY - posY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+      let thickness = Math.min(30, Math.max(4, distance * 0.4));
+
+      ribbon.style.width = `${distance}px`;
+      ribbon.style.height = `${thickness}px`;
+      ribbon.style.transform = `translate(${posX}px, ${posY}px) rotate(${angle}deg)`;
+
+      posX += dx * 0.2;
+      posY += dy * 0.2;
+
+      requestAnimationFrame(animateRibbon);
+    }
+    animateRibbon();
+
+    function updateRibbonVisibility() {
+      if (document.body.classList.contains('light-theme')) {
+        ribbon.style.display = 'none';
+      } else {
+        ribbon.style.display = 'block';
+      }
+    }
+    updateRibbonVisibility();
   });
 </script>
 </body>
