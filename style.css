@@ -264,6 +264,8 @@ header.light .nav-item {
   color: var(--accent); 
 }
 
+
+
 /* ─── THEME TOGGLE ───────────────────────────────────────────── */
 #theme-toggle {
   background: none; border: none; outline: none;
@@ -275,7 +277,7 @@ header.light .nav-item {
   color: #f39c12;
 }
 
-/* ─── MOUSE RIBBION ─────────────────────────────────────────────── */
+/* ─── MOUSE STRIPS ─────────────────────────────────────────────── */
 .ribbon-strip {
   position: absolute;
   width: 3px;
@@ -1484,4 +1486,21 @@ footer {
     color: #1e90ff;
   }
     }
+
+@media (min-width: 769px) {
+  .hamburger,
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+}
+
 /*----------------------------------------------------Aaditya Yuvaraj Hande----------------------------------------------------*/
