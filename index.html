@@ -335,122 +335,118 @@
   <!-- ─── JAVASCRIPT ───────────────────────────────────────── -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-  const loader = document.getElementById("preloader");
+    const loader = document.getElementById("preloader");
 
-  const observer = new PerformanceObserver((list) => {
-    const entries = list.getEntries();
-    const total = entries.length;
-    const loaded = entries.filter(entry => entry.duration > 0).length;
+    const observer = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const total = entries.length;
+      const loaded = entries.filter(entry => entry.duration > 0).length;
 
-    if (loaded / total >= 0.75) {
-      loader.classList.add("fade");
-      observer.disconnect();
+      if (loaded / total >= 0.75) {
+        loader.classList.add("fade");
+        observer.disconnect();
+      }
+    });
+    observer.observe({ entryTypes: ["resource"] });
+
+    window.addEventListener("load", () => {
+      loader.classList.add("hide");
+    });
+
+    const typewriterText = [
+      "Web Developer",
+      "Competitive Programmer",
+      "Open Source Enthusiast",
+      "UI Designer"
+    ];
+    let index = 0, charIndex = 0, isDeleting = false;
+    const display = document.getElementById("typewriter");
+
+    function typeEffect() {
+      const currentText = typewriterText[index];
+      display.innerHTML = isDeleting
+        ? currentText.substring(0, charIndex--)
+        : currentText.substring(0, charIndex++);
+
+      if (!isDeleting && charIndex === currentText.length) {
+        setTimeout(() => isDeleting = true, 1000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        index = (index + 1) % typewriterText.length;
+      }
+
+      setTimeout(typeEffect, isDeleting ? 60 : 100);
     }
-  });
-  observer.observe({ entryTypes: ["resource"] });
+    typeEffect();
 
-  window.addEventListener("load", () => {
-    loader.classList.add("hide");
-  });
-
-  // Typewriter effect
-  const typewriterText = [
-    "Web Developer",
-    "Competitive Programmer",
-    "Open Source Enthusiast",
-    "UI Designer"
-  ];
-  let index = 0, charIndex = 0, isDeleting = false;
-  const display = document.getElementById("typewriter");
-
-  function typeEffect() {
-    const currentText = typewriterText[index];
-    display.innerHTML = isDeleting
-      ? currentText.substring(0, charIndex--)
-      : currentText.substring(0, charIndex++);
-
-    if (!isDeleting && charIndex === currentText.length) {
-      setTimeout(() => isDeleting = true, 1000);
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      index = (index + 1) % typewriterText.length;
+    const themeBtn = document.getElementById('theme-toggle');
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light-theme");
+      themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+      themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
     }
 
-    setTimeout(typeEffect, isDeleting ? 60 : 100);
-  }
-  typeEffect();
-
-  // Theme Toggle
-  const themeBtn = document.getElementById('theme-toggle');
-  if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light-theme");
-    themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-  } else {
-    themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-  }
-
-  themeBtn.addEventListener("click", () => {
-    const isLight = document.body.classList.toggle("light-theme");
-    localStorage.setItem("theme", isLight ? "light" : "dark");
-    themeBtn.innerHTML = isLight
-      ? '<i class="fas fa-sun"></i>'
-      : '<i class="fas fa-moon"></i>';
-  });
+    themeBtn.addEventListener("click", () => {
+      const isLight = document.body.classList.toggle("light-theme");
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+      themeBtn.innerHTML = isLight
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+    });
 
     const hamburger = document.getElementById("hamburger");
     const mobileMenu = document.getElementById("mobile-menu");
     hamburger.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
+      mobileMenu.classList.toggle("hidden");
+    });
 
-  // ScrollReveal
-  ScrollReveal().reveal('.hero-title', { delay: 200, distance: '50px', origin: 'bottom' });
-  ScrollReveal().reveal('.hero-subtitle', { delay: 400, distance: '30px', origin: 'bottom' });
-  ScrollReveal().reveal('.hero-description', { delay: 600, distance: '20px', origin: 'bottom' });
-  ScrollReveal().reveal('.section-title', { delay: 200, distance: '20px', origin: 'bottom' });
-  ScrollReveal().reveal('.skill-item', { interval: 100 });
-  ScrollReveal().reveal('.project-card', { interval: 150 });
-  ScrollReveal().reveal('.edu-card', { interval: 150 });
-  ScrollReveal().reveal('.gallery-item', { interval: 150 });
-  ScrollReveal().reveal('.blog-card', { interval: 150 });
+    ScrollReveal().reveal('.hero-title', { delay: 200, distance: '50px', origin: 'bottom' });
+    ScrollReveal().reveal('.hero-subtitle', { delay: 400, distance: '30px', origin: 'bottom' });
+    ScrollReveal().reveal('.hero-description', { delay: 600, distance: '20px', origin: 'bottom' });
+    ScrollReveal().reveal('.section-title', { delay: 200, distance: '20px', origin: 'bottom' });
+    ScrollReveal().reveal('.skill-item', { interval: 100 });
+    ScrollReveal().reveal('.project-card', { interval: 150 });
+    ScrollReveal().reveal('.edu-card', { interval: 150 });
+    ScrollReveal().reveal('.gallery-item', { interval: 150 });
+    ScrollReveal().reveal('.blog-card', { interval: 150 });
 
-  // Active nav link highlight
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-item');
-  window.addEventListener('scroll', () => {
-    let cur = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 200) {
-        cur = s.getAttribute('id');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-item');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 200) {
+          cur = s.getAttribute('id');
+        }
+      });
+      navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === `#${cur}`) {
+          a.classList.add('active');
+        }
+      });
+    });
+
+    const ribbonContainer = document.getElementById('ribbon-container');
+    let lastTime = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      const now = performance.now();
+      if (now - lastTime > 8) {
+        for (let i = 0; i < 4; i++) {
+          const strip = document.createElement('div');
+          strip.className = 'ribbon-strip';
+          strip.style.left = `${e.clientX}px`;
+          strip.style.top = `${e.clientY + i * 4}px`;
+          strip.style.height = '2px';
+          ribbonContainer.appendChild(strip);
+          setTimeout(() => ribbonContainer.removeChild(strip), 1600);
+        }
+        lastTime = now;
       }
     });
-    navLinks.forEach(a => {
-      a.classList.remove('active');
-      if (a.getAttribute('href') === `#${cur}`) {
-        a.classList.add('active');
-      }
-    });
   });
-
-  // Ribbon strip effect
-  const ribbonContainer = document.getElementById('ribbon-container');
-  let lastTime = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    const now = performance.now();
-    if (now - lastTime > 8) {
-      for (let i = 0; i < 2; i++) {
-        const strip = document.createElement('div');
-        strip.className = 'ribbon-strip';
-        strip.style.left = `${e.clientX}px`;
-        strip.style.top = `${e.clientY}px`;
-        ribbonContainer.appendChild(strip);
-        setTimeout(() => ribbonContainer.removeChild(strip), 1600);
-      }
-      lastTime = now;
-    }
-  });
-});
 </script>
 </body>
 </html>
