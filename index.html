@@ -396,10 +396,7 @@
     });
 
     const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobile-menu");
-    hamburger.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+    hamburger.innerHTML = '<i class="fas fa-hamburger"></i>';
 
     ScrollReveal().reveal('.hero-title', { delay: 200, distance: '50px', origin: 'bottom' });
     ScrollReveal().reveal('.hero-subtitle', { delay: 400, distance: '30px', origin: 'bottom' });
@@ -434,7 +431,7 @@
     document.addEventListener('mousemove', (e) => {
       const now = performance.now();
       if (now - lastTime > 8) {
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 30; i++) {
           const strip = document.createElement('div');
           strip.className = 'ribbon-strip';
           strip.style.left = `${e.clientX}px`;
