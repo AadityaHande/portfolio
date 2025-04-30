@@ -1446,4 +1446,47 @@ footer {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  #page-header {
+    flex-wrap: wrap;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .nav-menu {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+    gap: 1rem;
+    display: none;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  #theme-toggle {
+    margin-left: auto;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body.light-theme .nav-menu {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  body.light-theme .nav-menu li a {
+    color: #222;
+  }
+
+  body.light-theme .nav-menu li a:hover,
+  body.light-theme .nav-menu li a.active {
+    color: #1e90ff;
+  }
+    }
 /*----------------------------------------------------Aaditya Yuvaraj Hande----------------------------------------------------*/
