@@ -28,7 +28,21 @@
       <li><a href="#media" class="nav-item">Media</a></li>
     </ul>
     <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+      <div id="hamburger" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   </header>
+  <ul id="mobile-menu" class="mobile-nav hidden">
+  <li><a href="#hero" class="nav-item">Home</a></li>
+  <li><a href="#skills" class="nav-item">Skills</a></li>
+  <li><a href="#projects" class="nav-item">Projects</a></li>
+  <li><a href="#education" class="nav-item">Education</a></li>
+  <li><a href="#certificates" class="nav-item">Certs</a></li>
+  <li><a href="#contact" class="nav-item">Contact</a></li>
+  <li><a href="#media" class="nav-item">Media</a></li>
+</ul>
 <div class="mouse-ribbon-container" id="ribbon-container"></div>
   <main>
 <section id="hero">
@@ -320,169 +334,123 @@
 
   <!-- ─── JAVASCRIPT ───────────────────────────────────────── -->
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("preloader");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const observer = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      const total = entries.length;
-      const loaded = entries.filter(entry => entry.duration > 0).length;
+  const observer = new PerformanceObserver((list) => {
+    const entries = list.getEntries();
+    const total = entries.length;
+    const loaded = entries.filter(entry => entry.duration > 0).length;
 
-      if (loaded / total >= 0.75) {
-        loader.classList.add("fade");
-        observer.disconnect();
-      }
-    });
-    observer.observe({ entryTypes: ["resource"] });
-
-    window.addEventListener("load", () => {
-      loader.classList.add("hide");
-    });
-
-    const typewriterText = [
-      "Web Developer",
-      "Competitive Programmer",
-      "Open Source Enthusiast",
-      "UI Designer"
-    ];
-    let index = 0, charIndex = 0, currentText = "", isDeleting = false;
-    const display = document.getElementById("typewriter");
-
-    function typeEffect() {
-      if (index >= typewriterText.length) index = 0;
-      currentText = typewriterText[index];
-      let shown = isDeleting
-        ? currentText.substring(0, charIndex--)
-        : currentText.substring(0, charIndex++);
-      display.innerHTML = shown;
-
-      if (!isDeleting && charIndex === currentText.length) {
-        setTimeout(() => isDeleting = true, 1000);
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        index++;
-      }
-
-      setTimeout(typeEffect, isDeleting ? 60 : 100);
+    if (loaded / total >= 0.75) {
+      loader.classList.add("fade");
+      observer.disconnect();
     }
-    typeEffect();
-
-    const themeBtn = document.getElementById('theme-toggle');
-    if (localStorage.getItem("theme") === "light") {
-      document.body.classList.add("light-theme");
-      themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-      document.body.classList.remove("light-theme");
-      themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-    }
-
-    themeBtn.addEventListener("click", () => {
-      const isLight = document.body.classList.toggle("light-theme");
-      localStorage.setItem("theme", isLight ? "light" : "dark");
-      themeBtn.innerHTML = isLight
-        ? '<i class="fas fa-sun"></i>'
-        : '<i class="fas fa-moon"></i>';
-      updateRibbonVisibility();
-    });
-
-    ScrollReveal().reveal('.hero-title',    { delay: 200, distance: '50px', origin: 'bottom' });
-    ScrollReveal().reveal('.hero-subtitle', { delay: 400, distance: '30px', origin: 'bottom' });
-    ScrollReveal().reveal('.hero-description', { delay: 600, distance: '20px', origin: 'bottom' });
-    ScrollReveal().reveal('.section-title',  { delay: 200, distance: '20px', origin: 'bottom' });
-    ScrollReveal().reveal('.skill-item',     { interval: 100 });
-    ScrollReveal().reveal('.project-card',   { interval: 150 });
-    ScrollReveal().reveal('.edu-card',       { interval: 150 });
-    ScrollReveal().reveal('.gallery-item',   { interval: 150 });
-    ScrollReveal().reveal('.blog-card',      { interval: 150 });
-
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-item');
-    window.addEventListener('scroll', () => {
-      let cur = '';
-      sections.forEach(s => {
-        const top = window.scrollY;
-        if (top >= s.offsetTop - 200) cur = s.getAttribute('id');
-      });
-      navLinks.forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === `#${cur}`) a.classList.add('active');
-      });
-    });
-
-    const ribbonContainer = document.createElement('div');
-    ribbonContainer.className = 'mouse-ribbon-container';
-    ribbonContainer.innerHTML = '<canvas id="mouse-ribbon"></canvas>';
-    document.body.appendChild(ribbonContainer);
-
-    const canvas = document.getElementById('mouse-ribbon');
-    const ctx = canvas.getContext('2d');
-    let points = [];
-    let hue = 0;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    document.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
-
-      for (let i = 0; i < 2; i++) {
-        points.push({
-          x: mouseX,
-          y: mouseY,
-          vx: (Math.random() - 0.5) * 1.2,
-          vy: (Math.random() - 0.5) * 1.2,
-          life: 0
-        });
-      }
-    });
-
-    function animateRibbon() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      hue += 2;
-      ctx.lineJoin = 'round';
-      ctx.lineCap = 'round';
-      ctx.shadowBlur = 10;
-
-      if (points.length > 0) {
-        ctx.beginPath();
-        ctx.moveTo(points[0].x, points[0].y);
-
-        for (let i = 1; i < points.length; i++) {
-          const p = points[i];
-          p.x += p.vx;
-          p.y += p.vy;
-          p.vx *= 0.9;
-          p.vy *= 0.9;
-          p.life += 1;
-          ctx.lineTo(p.x, p.y);
-        }
-
-        ctx.strokeStyle = `hsla(${hue}, 100%, 70%, 0.6)`;
-        ctx.lineWidth = 1.5;
-        ctx.shadowColor = `hsl(${hue}, 100%, 70%)`;
-        ctx.stroke();
-      }
-
-      points = points.filter(p => p.life < 36);
-      requestAnimationFrame(animateRibbon);
-    }
-
-    animateRibbon();
-
-    function updateRibbonVisibility() {
-      const container = document.querySelector('.mouse-ribbon-container');
-      container.style.display = document.body.classList.contains('light-theme') ? 'none' : 'block';
-    }
-
-    updateRibbonVisibility();
   });
+  observer.observe({ entryTypes: ["resource"] });
+
+  window.addEventListener("load", () => {
+    loader.classList.add("hide");
+  });
+
+  // Typewriter effect
+  const typewriterText = [
+    "Web Developer",
+    "Competitive Programmer",
+    "Open Source Enthusiast",
+    "UI Designer"
+  ];
+  let index = 0, charIndex = 0, isDeleting = false;
+  const display = document.getElementById("typewriter");
+
+  function typeEffect() {
+    const currentText = typewriterText[index];
+    display.innerHTML = isDeleting
+      ? currentText.substring(0, charIndex--)
+      : currentText.substring(0, charIndex++);
+
+    if (!isDeleting && charIndex === currentText.length) {
+      setTimeout(() => isDeleting = true, 1000);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % typewriterText.length;
+    }
+
+    setTimeout(typeEffect, isDeleting ? 60 : 100);
+  }
+  typeEffect();
+
+  // Theme Toggle
+  const themeBtn = document.getElementById('theme-toggle');
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-theme");
+    themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+
+  themeBtn.addEventListener("click", () => {
+    const isLight = document.body.classList.toggle("light-theme");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+    themeBtn.innerHTML = isLight
+      ? '<i class="fas fa-sun"></i>'
+      : '<i class="fas fa-moon"></i>';
+  });
+
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
+    hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // ScrollReveal
+  ScrollReveal().reveal('.hero-title', { delay: 200, distance: '50px', origin: 'bottom' });
+  ScrollReveal().reveal('.hero-subtitle', { delay: 400, distance: '30px', origin: 'bottom' });
+  ScrollReveal().reveal('.hero-description', { delay: 600, distance: '20px', origin: 'bottom' });
+  ScrollReveal().reveal('.section-title', { delay: 200, distance: '20px', origin: 'bottom' });
+  ScrollReveal().reveal('.skill-item', { interval: 100 });
+  ScrollReveal().reveal('.project-card', { interval: 150 });
+  ScrollReveal().reveal('.edu-card', { interval: 150 });
+  ScrollReveal().reveal('.gallery-item', { interval: 150 });
+  ScrollReveal().reveal('.blog-card', { interval: 150 });
+
+  // Active nav link highlight
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-item');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 200) {
+        cur = s.getAttribute('id');
+      }
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === `#${cur}`) {
+        a.classList.add('active');
+      }
+    });
+  });
+
+  // Ribbon strip effect
+  const ribbonContainer = document.getElementById('ribbon-container');
+  let lastTime = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    const now = performance.now();
+    if (now - lastTime > 8) {
+      for (let i = 0; i < 2; i++) {
+        const strip = document.createElement('div');
+        strip.className = 'ribbon-strip';
+        strip.style.left = `${e.clientX}px`;
+        strip.style.top = `${e.clientY}px`;
+        ribbonContainer.appendChild(strip);
+        setTimeout(() => ribbonContainer.removeChild(strip), 1600);
+      }
+      lastTime = now;
+    }
+  });
+});
 </script>
 </body>
 </html>
