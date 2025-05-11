@@ -1126,8 +1126,25 @@ header.light .nav-item {
 
 /* ─── FOOTER ────────────────────────────────────────────────── */
 footer {
-  text-align: center; padding: 2rem;
-  color: #777; opacity: .6;
+  text-align: center;
+  padding: 2rem;
+  color: #777;
+  opacity: 0.6;
+}
+
+footer p {
+  font-family: 'Courier New', Courier, monospace; 
+  image-rendering: pixelated; 
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+footer .emoji {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  image-rendering: pixelated;
+  margin: 0 0.2em;
 }
 
 @media (max-width: 768px) {
