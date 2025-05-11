@@ -1125,16 +1125,19 @@ header.light .nav-item {
 }
 
 /* ─── FOOTER ────────────────────────────────────────────────── */
+
 footer {
   text-align: center;
   padding: 2rem;
   color: #777;
   opacity: 0.6;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 footer p {
-  font-family: 'Courier New', Courier, monospace; 
-  image-rendering: pixelated; 
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  image-rendering: pixelated;
   -webkit-font-smoothing: none;
   font-smooth: never;
 }
@@ -1145,12 +1148,6 @@ footer .emoji {
   vertical-align: middle;
   image-rendering: pixelated;
   margin: 0 0.2em;
-}
-
-@media (max-width: 768px) {
-  header { padding: 1rem; }
-  .light header { padding: 0.5rem 1rem; }
-  .blob { display: none; }
 }
 
 /*--------------------TRying new--------------*/
