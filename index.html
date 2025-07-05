@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaditya Hande</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Preloader and Blobs -->
+  <div id="preloader">
+    <div class="ball"></div>
+  </div>
+  
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <!-- Header & Navigation -->
+  <nav id="page-header">
+    <div class="logo">Aaditya<span> Hande</span></div>
+
+    <ul class="nav-menu">
+      <li><a href="#hero" class="nav-item active">Home</a></li>
+      <li><a href="#skills" class="nav-item">Skills</a></li>
+      <li><a href="#projects" class="nav-item">Projects</a></li>
+      <li><a href="#education" class="nav-item">Education</a></li>
+      <li><a href="#certificates" class="nav-item">Certs</a></li>
+      <li><a href="#contact" class="nav-item">Contact</a></li>
+      <li><a href="#media" class="nav-item">Media</a></li>
+    </ul>
+
+    <button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+
+    <button id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <ul id="mobile-menu" class="mobile-nav hidden" aria-hidden="true">
+    <li><a href="#hero" class="nav-item">Home</a></li>
+    <li><a href="#skills" class="nav-item">Skills</a></li>
+    <li><a href="#projects" class="nav-item">Projects</a></li>
+    <li><a href="#education" class="nav-item">Education</a></li>
+    <li><a href="#certificates" class="nav-item">Certs</a></li>
+    <li><a href="#contact" class="nav-item">Contact</a></li>
+    <li><a href="#media" class="nav-item">Media</a></li>
+  </ul>
+
+  <!-- MAIN -->
+  <main>
+<section id="hero">
+  <div class="hero-container">
+    <div class="hero-left">
+      <h1 class="hero-title">
+        Hi, I'm <span class="accent">Aaditya Hande</span>
+      </h1>
+      <h2 class="hero-typewriter">
+        <span id="typewriter"></span>
+        <span class="cursor">|</span>
+      </h2>
+      <p class="hero-description">
+        I love creating dynamic websites and solving challenges using programming.
+      </p>
+      <a
+        href="https://drive.google.com/file/d/1owxmBUX7dLX0ETJdSm5pMhLJ2WIqWoBa/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-glow"
+      >
+        📄 Download Resume
+      </a>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-image-wrapper">
+        <img
+          src="profile.png"
+          alt="Profile Image"
+          class="hero-image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill-item">
+      <span class="skill-name">HTML</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 90%"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <span class="skill-name">CSS</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 80%"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <span class="skill-name">JavaScript</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 40%"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <span class="skill-name">Python</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 83%"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <span class="skill-name">Linux OS</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 65%"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <span class="skill-name">C/C++</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 75%"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">My Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="card-inner">
+
+        <div class="card-front">
+          <img src="chem.jpeg" alt="Project 1" class="project-image" />
+          <h3>Chemical Tracker</h3>
+        </div>
+
+        <div class="card-back">
+          <p>A multi-functional collaborative project for college, allowing faculty to completely track and manage chemicals</p>
+          <a href="https://github.com/aadityahande/chemlab" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
+          <a href="https://aadityahande.github.io/chemlab/" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-inner">
+
+        <div class="card-front">
+          <img src="hire2.png" alt="Project 2" class="project-image" />
+          <h3>AI Resume Portfolio Builder</h3>
+        </div>
+
+        <div class="card-back">
+          <p>AI powered resume and portfolio builder with modern tools and live time edits</p>
+          <a href="https://github.com/aadityahande/AURAfit" class="project-link" target="_blank" rel="noopener noreferrer">View Code<br>[in progress]</a>
+          <a href="https://github.com/aadityahande/AURAfit" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-inner">
+
+        <div class="card-front">
+          <img src="web3.jpeg" alt="Project 3" class="project-image" />
+          <h3>Portfolio Site</h3>
+        </div>
+
+        <div class="card-back">
+          <p>A self built portfolio website using HTML, CSS, JS</p>
+          <a href="https://github.com/aadityahande/portfolio" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
+          <a href="https://aadityahande.github.io/portfolio/" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="timeline-container">
+
+    <div class="timeline-item left reveal">
+      <div class="timeline-content glass">
+        <h3>Podar International School, Chinchwad</h3>
+        <p class="edu-board">CBSE Board</p>
+        <p class="edu-board">Passed in : 2022</p>
+        <p class="edu-grade">10th Grade – 91.8%</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right reveal">
+      <div class="timeline-content glass">
+        <h3>PPGM Junior College, Pimparne</h3>
+        <p class="edu-board">State Board</p>
+        <p class="edu-board">Passed in : 2024</p>
+        <p class="edu-grade">12th Grade – 70%</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left reveal">
+      <div class="timeline-content glass">
+        <h3>MIT Academy of Engineering, Alandi</h3>
+        <p class="edu-board">BTech in Computer Engineering</p>
+        <p class="edu-board">Pursuing 2024 - Today</p>
+        <p class="edu-grade">CGPA – 8.55</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="certificates">
+  <h2 class="section-title">Certificates</h2>
+  <div class="cert-grid">
+    <div class="cert-card glass">
+      <h3>Python</h3>
+      <p class="cert-provider">Cisco • Issued: Apr 2025</p>
+      <a href="https://www.credly.com/badges/43958d88-15f8-459f-a081-c6aaec8c255b/public_url" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+    </div>
+
+    <div class="cert-card glass">
+      <h3>Python Bootcamp</h3>
+      <p class="cert-provider">Udemy • Issued: Jan 2025</p>
+      <a href="https://www.udemy.com/certificate/UC-d545e786-a83c-4d36-bb6e-63bc63e08fca/" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+    </div>
+
+    <div class="cert-card glass">
+      <h3>Java Programming</h3>
+      <p class="cert-provider">Great Learning Academy • Issued: Dec 2024</p>
+      <a href="https://drive.google.com/file/u/0/d/1IL96vQMwyLiFny2-pegHe22elXsNifaP/view?usp=sharing&pli=1" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+    </div>
+
+    <div class="cert-card glass">
+      <h3>UI/UX for Beginners</h3>
+      <p class="cert-provider">Great Learning Academy • Issued: Dec 2024</p>
+      <a href="https://drive.google.com/file/d/1IDDffSdDX3p3Iz3IdisTKPY5mPL_Jk-M/view" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+    </div>
+
+    <div class="cert-card glass">
+      <h3>Data Science Foundations</h3>
+      <p class="cert-provider">Great Learning Academy • Issued: Dec 2024</p>
+      <a href="https://drive.google.com/file/d/1II0IXzNtxTbW-7pQUTyzM0BPREgFXkbg/view" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+    </div>
+
+    <div class="cert-card glass">
+      <h3>Cloud Computing Fundamentals</h3>
+      <p class="cert-provider">Google Cloud • Issued: Jan 2025</p>
+      <a href="https://drive.google.com/cloud-cert" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+    </div>
+  </div>
+</section>
+ 
+<section id="contact" class="contact-section">
+  <div class="contact-wrapper">
+
+    <!-- LEFT SIDE: Socials & CP Links -->
+    <div class="contact-left">
+      <h2 class="section-title">Contact</h2>
+      <p><i class="fas fa-envelope"></i> aadityahande27@gmail.com</p>
+
+      <div class="social-links">
+        <a href="https://linkedin.com/in/aadityahande" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/AadityaHande" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+
+      <h3 class="cp-title">Competitive Programming</h3>
+      <div class="cp-links">
+        <a href="https://leetcode.com/aadityahande" target="_blank">
+          <i class="fas fa-code"></i> LeetCode
+        </a>
+        <a href="https://codechef.com/users/aadityahande" target="_blank">
+          <i class="fas fa-utensils"></i> CodeChef
+        </a>
+        <a href="https://hackerrank.com/aadityahande" target="_blank">
+          <i class="fab fa-hackerrank"></i> HackerRank
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: Contact Form -->
+    <div class="contact-right glass">
+      <h3>Let's Connect</h3>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSeA9PflGyLeJjsUe10N1w4qGZMtVhbhVV_mBo-VvZn6G6Ox3g/formResponse" method="POST" target="hidden_iframe" onsubmit="showSuccessMessage()">
+        <input name="entry.911135274" type="text" placeholder="Your Name" required />
+        <input name="entry.1357219117" type="email" placeholder="Your Email" required />
+        <textarea name="entry.1668536715" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" class="button-link">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Hidden iframe to prevent redirect -->
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+</section>
+
+<section id="media">
+  <h2 class="section-title">Media</h2>
+  <p class="media-hint">Click to view fullscreen</p>
+
+  <div class="gallery-wrapper">
+    <div class="gallery-scroll">
+      <div class="gallery-item">
+        <img src="img1.jpeg" alt="Project Showcase 1" />
+      </div>
+      <div class="gallery-item">
+        <img src="img2.jpeg" alt="Award Ceremony" />
+      </div>
+      <div class="gallery-item">
+        <img src="img3.jpeg" alt="Coding Event" />
+      </div>
+      <div class="gallery-item">
+        <img src="img4.jpeg" alt="Teamwork Highlights" />
+      </div>
+      <div class="gallery-item">
+        <img src="img5.jpg" alt="Poster Presentation" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Media Viewer Modal -->
+  <div id="media-viewer" class="media-viewer hidden">
+    <span id="close-viewer" class="close-viewer">&times;</span>
+    <img id="viewer-img" src="" alt="Zoomed Media" />
+    <p id="media-caption" class="media-caption">Caption</p>
+    <p id="viewer-instruction" class="viewer-instruction"></p>
+    <span id="prev-btn" class="nav-btn">&#10094;</span>
+    <span id="next-btn" class="nav-btn">&#10095;</span>
+  </div>
+</section>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      © Originally Built With&nbsp;
+      <img src="heart.png" alt="heart" class="emoji" />
+      &nbsp;&amp;&nbsp;
+      <img src="coffee.png" alt="coffee" class="emoji" />
+      &nbsp;– Aaditya Hande
+    </p>
+  </footer>
+
+  <!--Chatbot-->
+<div id="chatbot-toggle" aria-label="Open chatbot">
+  <i class="fa-sharp fa-thin fa-dinosaur">🦕</i>
+</div>
+<!-- Dino Chatbot Panel -->
+<div id="chatbot-container" class="hidden">
+  <div class="chatbot-header">
+    <div id="back-btn" class="hidden"><i class="fas fa-arrow-left"></i></div>
+    <div class="chatbot-avatar">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Dino">
+      <span>Dino</span>
+    </div>
+    <div id="close-chatbot">&times;</div>
+  </div>
+
+  <div id="chatbot-main" class="chatbot-main">
+    <p class="dino-greeting">Hey there! I'm <strong>Dino</strong>, Aaditya's coding buddy 🦖<br>What do you want to know?</p>
+    <ul id="main-options">
+      <li data-target="about">Who's Aaditya?</li>
+      <li data-target="contact">How to reach Aaditya</li>
+      <li data-target="skills">Aaditya's tech skills</li>
+      <li data-target="github">Aaditya's GitHub</li>
+      <li data-target="linkedin">Aaditya's LinkedIn</li>
+      <li data-target="projects">Projects Aaditya made</li>
+    </ul>
+  </div>
+
+  <div id="chatbot-sub" class="chatbot-main hidden"></div>
+</div>
+  
+  <!-- JAVASCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loader = document.getElementById("preloader");
+
+      const observer = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const total = entries.length;
+        const loaded = entries.filter(entry => entry.duration > 0).length;
+
+        if (loaded / total >= 0.75) {
+          loader.classList.add("fade");
+          observer.disconnect();
+        }
+      });
+      observer.observe({ entryTypes: ["resource"] });
+
+      window.addEventListener("load", () => {
+        loader.classList.add("hide");
+      });
+
+      const typewriterText = [
+        "Web Developer",
+        "Competitive Programmer",
+        "Open Source Enthusiast",
+        "UI Designer"
+      ];
+      let index = 0, charIndex = 0, isDeleting = false;
+      const display = document.getElementById("typewriter");
+
+      function typeEffect() {
+        const currentText = typewriterText[index];
+        display.innerHTML = isDeleting
+          ? currentText.substring(0, charIndex--)
+          : currentText.substring(0, charIndex++);
+
+        if (!isDeleting && charIndex === currentText.length) {
+          setTimeout(() => isDeleting = true, 1000);
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          index = (index + 1) % typewriterText.length;
+        }
+
+        setTimeout(typeEffect, isDeleting ? 60 : 100);
+      }
+      typeEffect();
+
+      const themeBtn = document.getElementById('theme-toggle');
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-theme");
+        themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+
+      themeBtn.addEventListener("click", () => {
+        const isLight = document.body.classList.toggle("light-theme");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+        themeBtn.innerHTML = isLight
+          ? '<i class="fas fa-sun"></i>'
+          : '<i class="fas fa-moon"></i>';
+      });
+
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      hamburger.addEventListener("click", () => {
+      const expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", !expanded);
+      hamburger.classList.toggle("active"); // 🔁 Add this line
+      mobileMenu.classList.toggle("hidden");
+      });
+
+      ScrollReveal().reveal('.hero-title', { delay: 200, distance: '50px', origin: 'bottom' });
+      ScrollReveal().reveal('.hero-subtitle', { delay: 400, distance: '30px', origin: 'bottom' });
+      ScrollReveal().reveal('.hero-description', { delay: 600, distance: '20px', origin: 'bottom' });
+      ScrollReveal().reveal('.section-title', { delay: 100, distance: '20px', origin: 'bottom' });
+      ScrollReveal().reveal('.skill-item', { interval: 100 });
+      ScrollReveal().reveal('.project-card', { interval: 150 });
+      ScrollReveal().reveal('.edu-card', { interval: 150 });
+      ScrollReveal().reveal('.blog-card', { interval: 150 });
+
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-item');
+      window.addEventListener('scroll', () => {
+        let cur = '';
+        sections.forEach(s => {
+          if (window.scrollY >= s.offsetTop - 200) {
+            cur = s.getAttribute('id');
+          }
+        });
+        navLinks.forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === `#${cur}`) {
+            a.classList.add('active');
+          }
+        });
+      });
+      
+      const mobileLinks = document.querySelectorAll('#mobile-menu a');
+
+         mobileLinks.forEach(link => {
+         link.addEventListener('click', () => {
+         link.classList.add('click-feedback');
+         setTimeout(() => {
+           link.classList.remove('click-feedback');
+         }, 250); 
+       });
+     });
+      
+      const ribbonContainer = document.getElementById('ribbon-container');
+      let lastTime = 0;
+      document.addEventListener('mousemove', (e) => {
+        const now = performance.now();
+        if (now - lastTime > 8) {
+          for (let i = 0; i < 30; i++) {
+            const strip = document.createElement('div');
+            strip.className = 'ribbon-strip';
+            strip.style.left = `${e.clientX}px`;
+            strip.style.top = `${e.clientY + i * 4}px`;
+            strip.style.height = '2px';
+            ribbonContainer.appendChild(strip);
+            setTimeout(() => ribbonContainer.removeChild(strip), 1600);
+          }
+          lastTime = now;
+        }
+      });
+    });
+  </script>
+  <script>
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem("scrollY", window.scrollY);
+  });
+
+  window.addEventListener("load", () => {
+    const scrollY = localStorage.getItem("scrollY");
+    if (scrollY !== null) {
+      window.scrollTo(0, parseInt(scrollY));
+      localStorage.removeItem("scrollY");
+    }
+  });
+</script>
+<script>
+  function showSuccessMessage() {
+    setTimeout(() => {
+      alert("✅ Message sent successfully via Google Form!");
+    }, 500);
+  }
+</script>
+<script>
+  document.addEventListener('click', function(event) {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.querySelector('.hamburger');
+
+    const isClickInsideMenu = menu.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnHamburger && !menu.classList.contains('hidden')) {
+      menu.classList.add('hidden');
+    }
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const viewer = document.getElementById("media-viewer");
+    const viewerImg = document.getElementById("viewer-img");
+    const caption = document.getElementById("media-caption");
+    const viewerInstruction = document.getElementById("viewer-instruction");
+    const galleryImgs = document.querySelectorAll(".gallery-item img");
+    const closeBtn = document.getElementById("close-viewer");
+    const nextBtn = document.getElementById("next-btn");
+    const prevBtn = document.getElementById("prev-btn");
+
+    let currentIndex = 0;
+
+    function updateViewer(index) {
+      const img = galleryImgs[index];
+      viewerImg.src = img.src;
+      caption.textContent = img.alt;
+      currentIndex = index;
+
+      // Detect device
+      const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+      viewerInstruction.textContent = isMobile
+        ? "📱 Swipe to view more images"
+        : "🖱 Scroll or use ← → arrow keys";
+    }
+
+    galleryImgs.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        viewer.classList.remove("hidden");
+        updateViewer(index);
+      });
+    });
+
+    closeBtn.addEventListener("click", () => viewer.classList.add("hidden"));
+
+    nextBtn.addEventListener("click", () => {
+      const nextIndex = (currentIndex + 1) % galleryImgs.length;
+      updateViewer(nextIndex);
+    });
+
+    prevBtn.addEventListener("click", () => {
+      const prevIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
+      updateViewer(prevIndex);
+    });
+
+    // Arrow key navigation
+    window.addEventListener("keydown", (e) => {
+      if (viewer.classList.contains("hidden")) return;
+      if (e.key === "ArrowRight") nextBtn.click();
+      else if (e.key === "ArrowLeft") prevBtn.click();
+      else if (e.key === "Escape") closeBtn.click();
+    });
+
+    // Swipe detection for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    viewer.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    viewer.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX - 40) nextBtn.click();
+      if (touchEndX > touchStartX + 40) prevBtn.click();
+    });
+    
+    // Close viewer when clicking outside the image
+    viewer.addEventListener('click', (e) => {
+      if (
+        !viewerImg.contains(e.target) &&
+        !e.target.classList.contains('nav-btn') &&
+        !e.target.classList.contains('close-viewer')
+      ) {
+        viewer.classList.add("hidden");
+      }
+    });
+
+    // Escape key
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !viewer.classList.contains("hidden")) {
+        viewer.classList.add("hidden");
+      }
+    });
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("chatbot-toggle");
+  const container = document.getElementById("chatbot-container");
+  const closeBtn = document.getElementById("close-chatbot");
+  const backBtn = document.getElementById("back-btn");
+  const main = document.getElementById("chatbot-main");
+  const sub = document.getElementById("chatbot-sub");
+
+  const contentMap = {
+    about: `Aaditya is a SY BTech Computer Engineering student from MITAOE, passionate about building creative apps and solving real-world problems. He’s focused on AI/ML, Web Development, and DSA.`,
+    contact: `You can reach Aaditya at: <br><strong>aadityahande27@gmail.com</strong>`,
+    skills: `Aaditya is skilled in:
+    <ul>
+      <li>Python, C, HTML, CSS, JS</li>
+      <li>Data Visualization (Tableau)</li>
+      <li>Firebase, Github, Linux</li>
+      <li>AI/ML (Learning)</li>
+    </ul>`,
+    github: `Check out Aaditya's projects on GitHub:<br>
+    <a href="https://github.com/AadityaHande" target="_blank">github.com/AadityaHande</a>`,
+    linkedin: `Want to connect professionally?<br>
+    <a href="https://linkedin.com/in/aadityahande" target="_blank">linkedin.com/in/aadityahande</a>`,
+    projects: `
+      <p>Here are Aaditya's top projects:</p>
+      <div class="project-options">
+        <button onclick="window.open('https://aadityahande.github.io/chem2/', '_blank')">🧪 Chem Tracker Webapp</button>
+        <button disabled>📝 To-Do List Manager (Coming Soon)</button>
+      </div>`
+  };
+
+  toggle.addEventListener("click", () => container.classList.remove("hidden"));
+  closeBtn.addEventListener("click", () => container.classList.add("hidden"));
+  backBtn.addEventListener("click", () => {
+    main.classList.remove("hidden");
+    sub.classList.add("hidden");
+    backBtn.classList.add("hidden");
+  });
+
+  document.querySelectorAll("#main-options li").forEach(item => {
+    item.addEventListener("click", () => {
+      const key = item.getAttribute("data-target");
+      if (contentMap[key]) {
+        sub.innerHTML = `<p>${contentMap[key]}</p>`;
+        main.classList.add("hidden");
+        sub.classList.remove("hidden");
+        backBtn.classList.remove("hidden");
+      }
+    });
+  });
+});
+
+  document.addEventListener('click', function (event) {
+    const chatbot = document.getElementById('chatbot-container');
+    const toggleBtn = document.getElementById('chatbot-toggle');
+
+    if (
+      chatbot && !chatbot.classList.contains('hidden') &&
+      !chatbot.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      chatbot.classList.add('hidden');
+    }
+  });
+</script>
+</body>
+</html>
