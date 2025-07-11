@@ -747,7 +747,7 @@ body.light-theme .glass {
 .media-caption {
   margin-top: 0.8rem;
   font-size: 1.1rem;
-  color: var(--text-color);
+  color: rgb(255, 255, 255);
   font-weight: 500;
 }
 
