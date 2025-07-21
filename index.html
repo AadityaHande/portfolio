@@ -228,7 +228,6 @@ __/       /
   <h2 class="section-title">Experience</h2>
   <div class="timeline-container">
 
-    <!-- IBM Internship -->
     <div class="timeline-item">
       <div class="exp-box glass">
         <h3 class="exp-title">AI & IBM Cloud Technologies Intern</h3>
@@ -239,7 +238,6 @@ __/       /
       </div>
     </div>
 
-    <!-- GSSoC Entry -->
     <div class="timeline-item">
       <div class="exp-box glass">
         <h3 class="exp-title">Open Source Contributor (GSSoC’25)</h3>
@@ -251,8 +249,6 @@ __/       /
     </div>
   </div>
 
-  <!-- IBM Modal -->
-  <!-- IBM Modal -->
 <div id="ibm-modal" class="exp-modal" aria-hidden="true">
   <div class="exp-modal-content">
     <span class="exp-close-btn" data-close>&times;</span>
@@ -313,7 +309,6 @@ __/       /
   </div>
 </div>
 
-  <!-- GSSoC Modal -->
   <div id="gssoc-modal" class="exp-modal" aria-hidden="true">
     <div class="exp-modal-content">
       <span class="exp-close-btn" data-close>&times;</span>
@@ -333,9 +328,7 @@ __/       /
   </div>
 </section>
 
-<!-- 👇 JS: Modal Open/Close Logic -->
 <script>
-  // Open modal
   document.querySelectorAll(".exp-view-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const modalId = btn.getAttribute("data-modal");
@@ -348,7 +341,6 @@ __/       /
     });
   });
 
-  // Close modal
   document.querySelectorAll("[data-close]").forEach(btn => {
     btn.addEventListener("click", () => {
       const modal = btn.closest(".exp-modal");
@@ -360,7 +352,6 @@ __/       /
     });
   });
 
-  // Close on backdrop click
   document.querySelectorAll(".exp-modal").forEach(modal => {
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
@@ -371,7 +362,6 @@ __/       /
     });
   });
 
-  // Close on Escape key
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       document.querySelectorAll(".exp-modal.active").forEach(modal => {
@@ -420,88 +410,74 @@ __/       /
 <section id="certificates">
   <h2 class="section-title">Certificates</h2>
 
-  <!-- Grid: First 5 Certificates + View More Card -->
   <div class="cert-grid">
-    <!-- 1 -->
     <div class="cert-card glass">
       <h3>Getting Started with AI</h3>
       <p class="cert-provider">IBM SkillsBuild • Jul 2025</p>
       <a href="https://www.credly.com/badges/232934c9-dcf7-43bd-9e3e-f209640bf4d7/public_url" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- 2 -->
     <div class="cert-card glass">
       <h3>Journey to Cloud</h3>
       <p class="cert-provider">IBM SkillsBuild • Jul 2025</p>
       <a href="https://www.credly.com/badges/bb6489fa-864a-4771-9be0-edbc18aa308a/public_url" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- 3 -->
     <div class="cert-card glass">
       <h3>Python Essentials 2</h3>
       <p class="cert-provider">Cisco NetAcad • Apr 2025</p>
       <a href="https://www.credly.com/badges/c2fde7f1-253e-4b9a-ae42-b1e3f78a3af5/public_url" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- 4 -->
     <div class="cert-card glass">
       <h3>Python Bootcamp</h3>
       <p class="cert-provider">Udemy • Jan 2025</p>
       <a href="https://www.udemy.com/certificate/UC-d545e786-a83c-4d36-bb6e-63bc63e08fca/" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- 5 -->
     <div class="cert-card glass">
       <h3>UI/UX for Beginners</h3>
       <p class="cert-provider">Great Learning • Dec 2024</p>
       <a href="https://www.mygreatlearning.com/certificate/EGAIIEUC" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- View More Tile -->
     <div class="cert-card  glass view-more-card" onclick="toggleMoreCerts()">
       <h3 id="viewToggle">+ View More</h3>
       <p class="cert-provider">Expand to see all certificates</p>
     </div>
   </div>
 
-  <!-- Hidden Certificates -->
   <div class="cert-grid more-certs" id="moreCerts">
-    <!-- 6 -->
     <div class="cert-card glass">
       <h3>Java Programming</h3>
       <p class="cert-provider">Great Learning • Dec 2024</p>
       <a href="https://www.mygreatlearning.com/certificate/BXKMXFAN" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- 7 -->
     <div class="cert-card glass">
       <h3>Data Science Foundations</h3>
       <p class="cert-provider">Great Learning • Dec 2024</p>
       <a href="https://www.mygreatlearning.com/certificate/YYIVBZQT" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- 8 -->
     <div class="cert-card glass">
       <h3>Front End Development – HTML</h3>
       <p class="cert-provider">Great Learning • 2024</p>
       <a href="https://www.mygreatlearning.com/certificate/FEYSLFIS" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- 9 -->
     <div class="cert-card glass">
       <h3>Front End Development – CSS</h3>
       <p class="cert-provider">Great Learning • 2024</p>
       <a href="https://www.mygreatlearning.com/certificate/DEYHVXNQ" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- 10 -->
     <div class="cert-card glass">
       <h3>Linux Tutorial</h3>
       <p class="cert-provider">Great Learning • 2024</p>
       <a href="https://www.mygreatlearning.com/certificate/RPJFYDEO" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <!-- 11 -->
     <div class="cert-card glass">
       <h3>Python Essentials 1</h3>
       <p class="cert-provider">Cisco NetAcad • Apr 2025</p>
@@ -527,7 +503,6 @@ __/       /
 <section id="contact" class="contact-section">
   <div class="contact-wrapper">
 
-    <!-- LEFT SIDE: Socials & CP Links -->
     <div class="contact-left">
       <h2 class="section-title">Contact</h2>
       <p><i class="fas fa-envelope"></i> aadityahande27@gmail.com</p>
@@ -555,7 +530,6 @@ __/       /
       </div>
     </div>
 
-    <!-- RIGHT SIDE: Contact Form -->
     <div class="contact-right glass">
       <h3>Let's Connect</h3>
       <form action="https://docs.google.com/forms/d/e/1FAIpQLSeA9PflGyLeJjsUe10N1w4qGZMtVhbhVV_mBo-VvZn6G6Ox3g/formResponse" method="POST" target="hidden_iframe" onsubmit="showSuccessMessage()">
@@ -568,7 +542,6 @@ __/       /
 
   </div>
 
-  <!-- Hidden iframe to prevent redirect -->
   <iframe name="hidden_iframe" style="display:none;"></iframe>
 </section>
 
@@ -579,24 +552,23 @@ __/       /
   <div class="gallery-wrapper">
     <div class="gallery-scroll">
       <div class="gallery-item">
-        <img src="img1.jpeg" alt="Project Showcase 1" />
+        <img src="img1.jpeg" alt="ZEST’25, Checkmate Mode" />
       </div>
       <div class="gallery-item">
-        <img src="img2.jpeg" alt="Award Ceremony" />
+        <img src="img2.jpeg" alt="IYMC'24 Qualifiers" />
       </div>
       <div class="gallery-item">
-        <img src="img3.jpeg" alt="Coding Event" />
+        <img src="img3.jpeg" alt="Datathon'25 Score" />
       </div>
       <div class="gallery-item">
-        <img src="img4.jpeg" alt="Teamwork Highlights" />
+        <img src="img4.jpeg" alt="First Recognition during Induction Program" />
       </div>
       <div class="gallery-item">
-        <img src="img5.jpg" alt="Poster Presentation" />
+        <img src="img5.jpg" alt="Tableau Project - Dashboard Presentation" />
       </div>
     </div>
   </div>
 
-  <!-- Media Viewer Modal -->
   <div id="media-viewer" class="media-viewer hidden">
     <span id="close-viewer" class="close-viewer">&times;</span>
     <img id="viewer-img" src="" alt="Zoomed Media" />
@@ -608,7 +580,6 @@ __/       /
 </section>
 </main>
 
-  <!-- Footer -->
   <footer>
     <p>
       © Originally Built With&nbsp;
@@ -619,11 +590,10 @@ __/       /
     </p>
   </footer>
 
-  <!--Chatbot-->
 <div id="chatbot-toggle" aria-label="Open chatbot">
   <i class="fa-sharp fa-thin fa-dinosaur">🦕</i>
 </div>
-<!-- Dino Chatbot Panel -->
+  
 <div id="chatbot-container" class="hidden">
   <div class="chatbot-header">
     <div id="back-btn" class="hidden"><i class="fas fa-arrow-left"></i></div>
@@ -649,7 +619,6 @@ __/       /
   <div id="chatbot-sub" class="chatbot-main hidden"></div>
 </div>
   
-  <!-- JAVASCRIPT -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const typewriterText = [
@@ -700,7 +669,7 @@ __/       /
       hamburger.addEventListener("click", () => {
       const expanded = hamburger.getAttribute("aria-expanded") === "true";
       hamburger.setAttribute("aria-expanded", !expanded);
-      hamburger.classList.toggle("active"); // 🔁 Add this line
+      hamburger.classList.toggle("active"); 
       mobileMenu.classList.toggle("hidden");
       });
 
@@ -812,10 +781,9 @@ __/       /
       caption.textContent = img.alt;
       currentIndex = index;
 
-      // Detect device
       const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
       viewerInstruction.textContent = isMobile
-        ? "📱 Swipe to view more images"
+        ? "Swipe to view more images"
         : "Use ← → arrow keys";
     }
 
@@ -838,7 +806,6 @@ __/       /
       updateViewer(prevIndex);
     });
 
-    // Arrow key navigation
     window.addEventListener("keydown", (e) => {
       if (viewer.classList.contains("hidden")) return;
       if (e.key === "ArrowRight") nextBtn.click();
@@ -846,7 +813,6 @@ __/       /
       else if (e.key === "Escape") closeBtn.click();
     });
 
-    // Swipe detection for mobile
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -860,7 +826,6 @@ __/       /
       if (touchEndX > touchStartX + 40) prevBtn.click();
     });
     
-    // Close viewer when clicking outside the image
     viewer.addEventListener('click', (e) => {
       if (
         !viewerImg.contains(e.target) &&
@@ -871,7 +836,6 @@ __/       /
       }
     });
 
-    // Escape key
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && !viewer.classList.contains("hidden")) {
         viewer.classList.add("hidden");
@@ -973,7 +937,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ">> ./boot —complete",
   ];
 
-  // Step-by-step animation
   setTimeout(() => line1.classList.add("show"), 200);
   setTimeout(() => line2.classList.add("show"), 700);
   setTimeout(() => glitch.classList.add("show"), 1300);
@@ -1034,7 +997,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3600);
   };
 
-  // Countdown logic
   skipBtn.innerText = `Skip (00:0${countdown})`;
   skipInterval = setInterval(() => {
     countdown--;
@@ -1044,9 +1006,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       skipBtn.innerText = `Skip (00:0${countdown})`;
     }
-  }, 1000);
+  }, 2000);
 
-  // Skip button
   skipBtn.addEventListener("click", () => {
     clearInterval(skipInterval);
     skipBtn.style.display = "none";
@@ -1057,7 +1018,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeOut();
   });
 
-  // Run sequence
   streamLines(hackerPhrases);
   hideBootScreen();
   revealDino();
