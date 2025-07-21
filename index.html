@@ -12,9 +12,35 @@
 </head>
 <body>
   <!-- Preloader and Blobs -->
-  <div id="preloader">
-    <div class="ball"></div>
+<div id="pre-bg">
+  <button id="pre-skip-btn">Skip (00:03)</button>
+
+  <div id="pre-boot-screen">
+    <div class="pre-boot-text">
+      <p class="pre-line1">Initializing DinoOS...</p>
+      <p class="pre-line2">System Check: OK</p>
+      <p class="pre-glitch-text">Memory Sync: ⚠ RECOVERED</p><br>
+      <pre id="pre-hacker-lines"></pre>
+    </div>
   </div>
+
+  <div class="pre-intro-inner">
+    <div class="pre-glow-circle pre-shock-pulse">
+      <div class="pre-ascii-dino pre-crt-flicker">
+<pre>
+           __
+          / _)
+   .-^^^-/ /
+__/       /
+<__.|_|-|_|
+</pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="pre-flash-overlay" id="pre-flash"></div>
+  <div class="pre-smoke-container" id="pre-smoke-container"></div>
+</div>
   
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
@@ -27,6 +53,7 @@
       <li><a href="#hero" class="nav-item active">Home</a></li>
       <li><a href="#skills" class="nav-item">Skills</a></li>
       <li><a href="#projects" class="nav-item">Projects</a></li>
+    <li><a href="#exp-section" class="nav-item">Experience</a></li>
       <li><a href="#education" class="nav-item">Education</a></li>
       <li><a href="#certificates" class="nav-item">Certs</a></li>
       <li><a href="#contact" class="nav-item">Contact</a></li>
@@ -46,6 +73,7 @@
     <li><a href="#hero" class="nav-item">Home</a></li>
     <li><a href="#skills" class="nav-item">Skills</a></li>
     <li><a href="#projects" class="nav-item">Projects</a></li>
+    <li><a href="#exp-section" class="nav-item">Experience</a></li>
     <li><a href="#education" class="nav-item">Education</a></li>
     <li><a href="#certificates" class="nav-item">Certs</a></li>
     <li><a href="#contact" class="nav-item">Contact</a></li>
@@ -145,12 +173,12 @@
     <div class="project-card">
       <div class="card-inner">
 
-        <div class="card-front">
+        <div class="card-front glass">
           <img src="chem.jpeg" alt="Project 1" class="project-image" />
           <h3>Chemical Tracker</h3>
         </div>
 
-        <div class="card-back">
+        <div class="card-back glass">
           <p>A multi-functional collaborative project for college, allowing faculty to completely track and manage chemicals</p>
           <a href="https://github.com/aadityahande/chemlab" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
           <a href="https://aadityahande.github.io/chemlab/" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -162,12 +190,12 @@
     <div class="project-card">
       <div class="card-inner">
 
-        <div class="card-front">
+        <div class="card-front glass">
           <img src="hire2.png" alt="Project 2" class="project-image" />
           <h3>AI Resume Portfolio Builder</h3>
         </div>
 
-        <div class="card-back">
+        <div class="card-back glass">
           <p>AI powered resume and portfolio builder with modern tools and live time edits</p>
           <a href="https://github.com/aadityahande/AURAfit" class="project-link" target="_blank" rel="noopener noreferrer">View Code<br>[in progress]</a>
           <a href="https://github.com/aadityahande/AURAfit" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -179,12 +207,12 @@
     <div class="project-card">
       <div class="card-inner">
 
-        <div class="card-front">
+        <div class="card-front glass">
           <img src="web3.jpeg" alt="Project 3" class="project-image" />
           <h3>Portfolio Site</h3>
         </div>
 
-        <div class="card-back">
+        <div class="card-back glass">
           <p>A self built portfolio website using HTML, CSS, JS</p>
           <a href="https://github.com/aadityahande/portfolio" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
           <a href="https://aadityahande.github.io/portfolio/" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -196,6 +224,165 @@
   </div>
 </section>
 
+<section id="exp-section">
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline-container">
+
+    <!-- IBM Internship -->
+    <div class="timeline-item">
+      <div class="exp-box glass">
+        <h3 class="exp-title">AI & IBM Cloud Technologies Intern</h3>
+        <div class="exp-org">Edunet Foundation | IBM SkillsBuild (AICTE)</div>
+        <div class="exp-duration">July 2025 – August 2025</div>
+        <div class="exp-location">Remote</div>
+        <button class="exp-view-btn" data-modal="ibm-modal">View Info</button>
+      </div>
+    </div>
+
+    <!-- GSSoC Entry -->
+    <div class="timeline-item">
+      <div class="exp-box glass">
+        <h3 class="exp-title">Open Source Contributor (GSSoC’25)</h3>
+        <div class="exp-org">GirlScript Summer of Code</div>
+        <div class="exp-duration">July 2025 – Ongoing</div>
+        <div class="exp-location">Remote</div>
+        <button class="exp-view-btn" data-modal="gssoc-modal">View Info</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- IBM Modal -->
+  <!-- IBM Modal -->
+<div id="ibm-modal" class="exp-modal" aria-hidden="true">
+  <div class="exp-modal-content">
+    <span class="exp-close-btn" data-close>&times;</span>
+    <h3 class="exp-modal-title">AI & IBM Cloud Technologies Intern</h3>
+    <p class="exp-modal-sub">Edunet Foundation | IBM SkillsBuild (facilitated by AICTE)</p>
+
+    <p class="exp-subhead"><strong>📝 Overview:</strong></p>
+    <p>
+      A 4-week mentor-led internship under the AICTE virtual internship initiative.
+      The program emphasized hands-on projects in IBM Cloud and Artificial Intelligence, backed with
+      official offer letter and certificate.
+    </p>
+
+    <p class="exp-subhead"><strong>🔧 Tools & Technologies Explored:</strong></p>
+    <ul>
+      <li><strong>Watson AutoAI</strong> – Used for crop recommendation models</li>
+      <li><strong>IBM watsonx Assistant</strong> – Built a functional chatbot</li>
+      <li><strong>RAG with LangChain</strong> – Retrieval-Augmented Generation pipeline</li>
+      <li><strong>Agentic AI</strong> – Leveraged IBM InstructLab + Vision Models</li>
+      <li><strong>IBM Data Refinery</strong>, Cloud Object Storage, and Data Prep Toolkit</li>
+    </ul>
+
+    <p class="exp-subhead"><strong>📌 Final Project:</strong></p>
+    <p>
+      Designed an Agentic RAG System that integrates:
+      <ul>
+        <li>🔗 watsonx Prompt Lab</li>
+        <li>🔗 InstructLab agents</li>
+        <li>🔗 LangChain orchestration</li>
+      </ul>
+    </p>
+
+    <p class="exp-subhead"><strong>📚 Courses Completed:</strong></p>
+    <ul>
+      <li>
+        📘 <strong>Getting Started with Artificial Intelligence</strong><br>
+        <a href="https://link-to-getting-started-cert.pdf" target="_blank">📜 Certificate</a> |
+        <a href="https://www.credly.com/badges/credly-ai-badge" target="_blank">🏅 Badge</a>
+      </li>
+      <li>
+        📘 <strong>Journey to Cloud</strong><br>
+        <a href="https://link-to-journey-cloud-cert.pdf" target="_blank">📜 Certificate</a> |
+        <a href="https://www.credly.com/badges/credly-cloud-badge" target="_blank">🏅 Badge</a>
+      </li>
+      <li>
+        📘 <strong>Lab: Retrieval Augmented Generation with LangChain</strong><br>
+        <a href="https://link-to-rag-lab-cert.pdf" target="_blank">📜 Certificate</a>
+      </li>
+    </ul>
+
+    <p class="exp-subhead"><strong>💡 Skills Gained:</strong><br></p>IBM Cloud, AI, Python, Prompt Engineering, AutoAI, LangChain, InstructLab</p>
+
+    <div class="exp-media">
+      <img src="in-progress.jpg" alt="IBM Completion Certificate">
+      <a href="https://github.com/yourproject" target="_blank">🔗 GitHub Projects</a>
+      <a href="https://www.credly.com/badges/xyz" target="_blank">🏅 View Badge</a>
+    </div>
+  </div>
+</div>
+
+  <!-- GSSoC Modal -->
+  <div id="gssoc-modal" class="exp-modal" aria-hidden="true">
+    <div class="exp-modal-content">
+      <span class="exp-close-btn" data-close>&times;</span>
+      <h3 class="exp-modal-title">GirlScript Summer of Code 2025</h3>
+      <p class="exp-modal-sub">Open Source Contributor (Selected)</p>
+      <p class="exp-subhead"><strong>Description:</strong> Selected as a contributor for GSSoC’25 — a community-driven open source program. Will be contributing to real-world projects in web development, full-stack apps, and documentation.</p>
+      <ul>
+        <li>🔹 Focus: JavaScript, APIs, GitHub workflow, full-stack repositories</li>
+        <li>🔹 Expected contributions to beginner-friendly and core repositories</li>
+        <li>🔹 Part of mentorship-driven open source learning initiative</li>
+      </ul>
+      <p class="exp-subhead"><strong>Skills:</strong> Git, GitHub, Open Source, Collaboration, JavaScript, HTML/CSS</p>
+      <div class="exp-media">
+        <a href="https://gssoc.girlscript.tech" target="_blank">🌐 Official Website</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 👇 JS: Modal Open/Close Logic -->
+<script>
+  // Open modal
+  document.querySelectorAll(".exp-view-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const modalId = btn.getAttribute("data-modal");
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+    });
+  });
+
+  // Close modal
+  document.querySelectorAll("[data-close]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const modal = btn.closest(".exp-modal");
+      if (modal) {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  // Close on backdrop click
+  document.querySelectorAll(".exp-modal").forEach(modal => {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  // Close on Escape key
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".exp-modal.active").forEach(modal => {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+      });
+      document.body.style.overflow = "";
+    }
+  });
+</script>
+    
 <section id="education">
   <h2 class="section-title">Education</h2>
   <div class="timeline-container">
@@ -232,44 +419,110 @@
 
 <section id="certificates">
   <h2 class="section-title">Certificates</h2>
+
+  <!-- Grid: First 5 Certificates + View More Card -->
   <div class="cert-grid">
+    <!-- 1 -->
     <div class="cert-card glass">
-      <h3>Python</h3>
-      <p class="cert-provider">Cisco • Issued: Apr 2025</p>
-      <a href="https://www.credly.com/badges/43958d88-15f8-459f-a081-c6aaec8c255b/public_url" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+      <h3>Getting Started with AI</h3>
+      <p class="cert-provider">IBM SkillsBuild • Jul 2025</p>
+      <a href="https://www.credly.com/badges/232934c9-dcf7-43bd-9e3e-f209640bf4d7/public_url" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
+    <!-- 2 -->
+    <div class="cert-card glass">
+      <h3>Journey to Cloud</h3>
+      <p class="cert-provider">IBM SkillsBuild • Jul 2025</p>
+      <a href="https://www.credly.com/badges/bb6489fa-864a-4771-9be0-edbc18aa308a/public_url" class="cert-link" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- 3 -->
+    <div class="cert-card glass">
+      <h3>Python Essentials 2</h3>
+      <p class="cert-provider">Cisco NetAcad • Apr 2025</p>
+      <a href="https://www.credly.com/badges/c2fde7f1-253e-4b9a-ae42-b1e3f78a3af5/public_url" class="cert-link" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- 4 -->
     <div class="cert-card glass">
       <h3>Python Bootcamp</h3>
-      <p class="cert-provider">Udemy • Issued: Jan 2025</p>
-      <a href="https://www.udemy.com/certificate/UC-d545e786-a83c-4d36-bb6e-63bc63e08fca/" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+      <p class="cert-provider">Udemy • Jan 2025</p>
+      <a href="https://www.udemy.com/certificate/UC-d545e786-a83c-4d36-bb6e-63bc63e08fca/" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
-    <div class="cert-card glass">
-      <h3>Java Programming</h3>
-      <p class="cert-provider">Great Learning Academy • Issued: Dec 2024</p>
-      <a href="https://drive.google.com/file/u/0/d/1IL96vQMwyLiFny2-pegHe22elXsNifaP/view?usp=sharing&pli=1" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
-    </div>
-
+    <!-- 5 -->
     <div class="cert-card glass">
       <h3>UI/UX for Beginners</h3>
-      <p class="cert-provider">Great Learning Academy • Issued: Dec 2024</p>
-      <a href="https://drive.google.com/file/d/1IDDffSdDX3p3Iz3IdisTKPY5mPL_Jk-M/view" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+      <p class="cert-provider">Great Learning • Dec 2024</p>
+      <a href="https://www.mygreatlearning.com/certificate/EGAIIEUC" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
+    <!-- View More Tile -->
+    <div class="cert-card  glass view-more-card" onclick="toggleMoreCerts()">
+      <h3 id="viewToggle">+ View More</h3>
+      <p class="cert-provider">Expand to see all certificates</p>
+    </div>
+  </div>
+
+  <!-- Hidden Certificates -->
+  <div class="cert-grid more-certs" id="moreCerts">
+    <!-- 6 -->
+    <div class="cert-card glass">
+      <h3>Java Programming</h3>
+      <p class="cert-provider">Great Learning • Dec 2024</p>
+      <a href="https://www.mygreatlearning.com/certificate/BXKMXFAN" class="cert-link" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- 7 -->
     <div class="cert-card glass">
       <h3>Data Science Foundations</h3>
-      <p class="cert-provider">Great Learning Academy • Issued: Dec 2024</p>
-      <a href="https://drive.google.com/file/d/1II0IXzNtxTbW-7pQUTyzM0BPREgFXkbg/view" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+      <p class="cert-provider">Great Learning • Dec 2024</p>
+      <a href="https://www.mygreatlearning.com/certificate/YYIVBZQT" class="cert-link" target="_blank">View Certificate</a>
     </div>
 
+    <!-- 8 -->
     <div class="cert-card glass">
-      <h3>Cloud Computing Fundamentals</h3>
-      <p class="cert-provider">Google Cloud • Issued: Jan 2025</p>
-      <a href="https://drive.google.com/cloud-cert" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+      <h3>Front End Development – HTML</h3>
+      <p class="cert-provider">Great Learning • 2024</p>
+      <a href="https://www.mygreatlearning.com/certificate/FEYSLFIS" class="cert-link" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- 9 -->
+    <div class="cert-card glass">
+      <h3>Front End Development – CSS</h3>
+      <p class="cert-provider">Great Learning • 2024</p>
+      <a href="https://www.mygreatlearning.com/certificate/DEYHVXNQ" class="cert-link" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- 10 -->
+    <div class="cert-card glass">
+      <h3>Linux Tutorial</h3>
+      <p class="cert-provider">Great Learning • 2024</p>
+      <a href="https://www.mygreatlearning.com/certificate/RPJFYDEO" class="cert-link" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- 11 -->
+    <div class="cert-card glass">
+      <h3>Python Essentials 1</h3>
+      <p class="cert-provider">Cisco NetAcad • Apr 2025</p>
+      <a href="https://www.credly.com/badges/43958d88-15f8-459f-a081-c6aaec8c255b/public_url" class="cert-link" target="_blank">View Certificate</a>
     </div>
   </div>
 </section>
+
+<script>
+  function toggleMoreCerts() {
+    const moreCerts = document.getElementById('moreCerts');
+    const toggleText = document.getElementById('viewToggle');
+
+    moreCerts.classList.toggle('show');
+    if (moreCerts.classList.contains('show')) {
+      toggleText.textContent = '− View Less';
+    } else {
+      toggleText.textContent = '+ View More';
+    }
+  }
+</script>
  
 <section id="contact" class="contact-section">
   <div class="contact-wrapper">
@@ -321,24 +574,24 @@
 
 <section id="media">
   <h2 class="section-title">Media</h2>
-  <p class="media-hint">Click to view fullscreen</p>
+  <p class="media-hint">Click to view fullscreen <br> </p>
 
   <div class="gallery-wrapper">
     <div class="gallery-scroll">
       <div class="gallery-item">
-        <img src="img1.jpeg" alt="ZEST’25, Checkmate Mode" />
+        <img src="img1.jpeg" alt="Project Showcase 1" />
       </div>
       <div class="gallery-item">
-        <img src="img2.jpeg" alt="IYMC'24 Qualifiers" />
+        <img src="img2.jpeg" alt="Award Ceremony" />
       </div>
       <div class="gallery-item">
-        <img src="img3.jpeg" alt="Datathon'25 Score" />
+        <img src="img3.jpeg" alt="Coding Event" />
       </div>
       <div class="gallery-item">
-        <img src="img4.jpeg" alt="First Recognition during Induction Program" />
+        <img src="img4.jpeg" alt="Teamwork Highlights" />
       </div>
       <div class="gallery-item">
-        <img src="img5.jpg" alt="Tableau Project - Dashboard Presentation" />
+        <img src="img5.jpg" alt="Poster Presentation" />
       </div>
     </div>
   </div>
@@ -384,12 +637,12 @@
   <div id="chatbot-main" class="chatbot-main">
     <p class="dino-greeting">Hey there! I'm <strong>Dino</strong>, Aaditya's coding buddy 🦖<br>What do you want to know?</p>
     <ul id="main-options">
-      <li data-target="about">Who's Aaditya?</li>
-      <li data-target="contact">How to reach Aaditya</li>
-      <li data-target="skills">Aaditya's tech skills</li>
-      <li data-target="github">Aaditya's GitHub</li>
-      <li data-target="linkedin">Aaditya's LinkedIn</li>
-      <li data-target="projects">Projects Aaditya made</li>
+      <li class="custom-li" data-target="about">Who's Aaditya?</li>
+      <li class="custom-li" data-target="contact">How to reach Aaditya</li>
+      <li class="custom-li" data-target="skills">Aaditya's tech skills</li>
+      <li class="custom-li" data-target="github">Aaditya's GitHub</li>
+      <li class="custom-li"data-target="linkedin">Aaditya's LinkedIn</li>
+      <li class="custom-li" data-target="projects">Projects Aaditya made</li>
     </ul>
   </div>
 
@@ -399,24 +652,6 @@
   <!-- JAVASCRIPT -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const loader = document.getElementById("preloader");
-
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const total = entries.length;
-        const loaded = entries.filter(entry => entry.duration > 0).length;
-
-        if (loaded / total >= 0.75) {
-          loader.classList.add("fade");
-          observer.disconnect();
-        }
-      });
-      observer.observe({ entryTypes: ["resource"] });
-
-      window.addEventListener("load", () => {
-        loader.classList.add("hide");
-      });
-
       const typewriterText = [
         "Web Developer",
         "Competitive Programmer",
@@ -581,7 +816,7 @@
       const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
       viewerInstruction.textContent = isMobile
         ? "📱 Swipe to view more images"
-        : "🖱 Scroll or use ← → arrow keys";
+        : "Use ← → arrow keys";
     }
 
     galleryImgs.forEach((img, index) => {
@@ -708,6 +943,127 @@ document.addEventListener("DOMContentLoaded", () => {
       chatbot.classList.add('hidden');
     }
   });
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const pre = id => document.getElementById("pre-" + id);
+  const preBg = pre("bg");
+
+  const skipBtn = pre("skip-btn");
+  const flash = pre("flash");
+  const smokeContainer = pre("smoke-container");
+  const bootScreen = pre("boot-screen");
+  const line1 = document.querySelector(".pre-line1");
+  const line2 = document.querySelector(".pre-line2");
+  const glitch = document.querySelector(".pre-glitch-text");
+  const hackerLines = pre("hacker-lines");
+
+  let countdown = 3;
+  let skipInterval;
+
+  const hackerPhrases = [
+    ">> Injecting BIOS hooks...",
+    ">> Mounting dino core modules...",
+    ">> Spawning root@raptor-shell...",
+    ">> Enabling claw compression...",
+    ">> Trace: [0x000F3DFA]",
+    ">> ./boot —complete",
+  ];
+
+  // Step-by-step animation
+  setTimeout(() => line1.classList.add("show"), 200);
+  setTimeout(() => line2.classList.add("show"), 700);
+  setTimeout(() => glitch.classList.add("show"), 1300);
+
+  const streamLines = (lines, delay = 1700) => {
+    let index = 0;
+    const stream = () => {
+      if (index < lines.length) {
+        const line = document.createElement("div");
+        line.textContent = lines[index++];
+        line.className = "pre-line-fade";
+        hackerLines.appendChild(line);
+        setTimeout(stream, 150);
+      }
+    };
+    setTimeout(stream, delay);
+  };
+
+  const hideBootScreen = () => {
+    setTimeout(() => {
+      bootScreen.style.transition = "opacity 0.4s ease";
+      bootScreen.style.opacity = 0;
+      setTimeout(() => bootScreen.style.display = "none", 300);
+    }, 2400);
+  };
+
+  const revealDino = () => {
+    setTimeout(() => {
+      preBg.classList.add("pre-show-dino");
+    }, 2700);
+  };
+
+  const triggerFlash = () => {
+    setTimeout(() => {
+      flash.classList.add("pre-flash");
+      setTimeout(() => flash.classList.remove("pre-flash"), 220);
+      createSmoke();
+    }, 2900);
+  };
+
+  const createSmoke = () => {
+    for (let i = 0; i < 30; i++) {
+      const smoke = document.createElement("div");
+      smoke.className = "pre-smoke";
+      smoke.style.left = `${30 + Math.random() * 40}%`;
+      smoke.style.top = `${50 + Math.random() * 40}%`;
+      smoke.style.animationDuration = `${1 + Math.random()}s`;
+      smokeContainer.appendChild(smoke);
+      setTimeout(() => smoke.remove(), 2000);
+    }
+  };
+
+  const fadeOut = () => {
+    setTimeout(() => {
+      preBg.style.transition = "opacity 0.6s ease-in";
+      preBg.style.opacity = 0;
+      setTimeout(() => preBg.remove(), 800);
+    }, 3600);
+  };
+
+  // Countdown logic
+  skipBtn.innerText = `Skip (00:0${countdown})`;
+  skipInterval = setInterval(() => {
+    countdown--;
+    if (countdown <= 0) {
+      clearInterval(skipInterval);
+      skipBtn.style.display = "none";
+    } else {
+      skipBtn.innerText = `Skip (00:0${countdown})`;
+    }
+  }, 1000);
+
+  // Skip button
+  skipBtn.addEventListener("click", () => {
+    clearInterval(skipInterval);
+    skipBtn.style.display = "none";
+    bootScreen.style.display = "none";
+    preBg.classList.add("pre-show-dino");
+    flash.classList.add("pre-flash");
+    createSmoke();
+    fadeOut();
+  });
+
+  // Run sequence
+  streamLines(hackerPhrases);
+  hideBootScreen();
+  revealDino();
+  triggerFlash();
+  fadeOut();
+});
 </script>
 </body>
 </html>
